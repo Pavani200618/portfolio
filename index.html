@@ -18,51 +18,46 @@
         * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; scroll-behavior: smooth;}
         body {background: #0f172a; background-attachment: fixed; color: var(--text-main); line-height: 1.6;}
         
-        /* Navbar */
         .navbar {display:flex; justify-content:space-between; align-items:center; padding:15px 8%; position:fixed; width:100%; top:0; z-index:1000; backdrop-filter:blur(15px); border-bottom: 1px solid var(--glass-border); background: rgba(15, 23, 42, 0.8);}
         .logo {font-size:20px; font-weight:600; color: var(--accent); letter-spacing: 1px; text-transform: uppercase;}
         .nav-links {list-style:none; display:flex; gap:30px;}
         .nav-links a {color: var(--text-main); font-weight:400; transition:0.3s; text-decoration: none; font-size: 14px;}
         .nav-links a:hover {color: var(--accent);}
 
-        /* Hero Section */
         #home {display:flex; flex-direction: column; align-items:center; justify-content:center; text-align:center; min-height:100vh; padding: 0 10%;}
         .hero-img {margin-bottom: 30px; animation: float 4s ease-in-out infinite;}
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .hero-img img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .hero-img img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        
         .hero-text h2 {font-size: clamp(30px, 5vw, 52px); font-weight: 600; margin-bottom: 10px;}
         .hero-text span {background: linear-gradient(90deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
         .typing-container {font-size: 22px; color: var(--text-dim); min-height: 35px; font-weight: 300;}
 
-        /* Sections */
-        .section {padding: 100px 10%; max-width: 1200px; margin: 0 auto;}
+        .section {padding: 80px 10%; max-width: 1200px; margin: 0 auto;}
         h2.title {text-align:center; font-size:32px; margin-bottom:50px; font-weight: 600; position: relative;}
         h2.title::after {content:''; width:40px; height:3px; background:var(--accent); position:absolute; bottom:-15px; left:50%; transform:translateX(-50%);}
 
-        /* Card Styles */
-        .glass-card { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px; transition: 0.4s; }
-        .glass-card:hover {background: rgba(255, 255, 255, 0.06); border-color: var(--accent);}
+        .glass-card { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 24px; padding: 35px; transition: 0.4s; height: 100%; }
+        .glass-card:hover {background: rgba(255, 255, 255, 0.06); border-color: var(--accent); transform: translateY(-5px);}
 
-        /* Projects */
-        .projects-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;}
-        .project-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
-        .project-card:hover {transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.2);}
-        .project-card h3 {color: var(--accent); margin-bottom: 15px;}
-        .project-card p {color: var(--text-dim); font-size: 14px; margin-bottom: 25px;}
+        .grid-wrapper {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;}
         
-        .view-btn { align-self: flex-start; padding: 10px 24px; background: var(--accent); color: white; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
-        .view-btn:hover { background: #2563eb; transform: scale(1.05); }
+        /* Skills & Achievement Lists */
+        .skill-info {display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;}
+        .bar-bg {background: rgba(255,255,255,0.1); height: 8px; border-radius: 10px; margin-bottom: 15px;}
+        .bar-fill {background: var(--accent); height: 100%; border-radius: 10px;}
+        
+        .list-item {margin-bottom: 15px; display: flex; gap: 10px; color: var(--text-dim); font-size: 14px;}
+        .list-item strong {color: var(--text-main);}
 
-        /* Contact */
-        .contact-box {text-align: center; padding: 60px; background: linear-gradient(to bottom, var(--glass), transparent);}
+        /* Buttons */
         .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
-        .contact-btn { display: inline-block; padding: 12px 35px; border-radius: 50px; background: var(--accent); color: white; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .contact-btn.secondary { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-        .contact-btn:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); transform: translateY(-3px); }
+        .primary-btn { display: inline-block; padding: 12px 30px; border-radius: 50px; background: var(--accent); color: white; text-decoration: none; font-weight: 600; transition: 0.3s; border: none; cursor: pointer;}
+        .secondary-btn { display: inline-block; padding: 10px 25px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 14px; margin-top: 15px;}
+        .secondary-btn:hover { background: var(--accent); color: white; }
 
-        footer {text-align:center; padding:50px; font-size: 13px; color: var(--text-dim); border-top: 1px solid var(--glass-border);}
-
-        @media(max-width:768px){ .nav-links {display: none;} }
+        footer {text-align:center; padding:40px; font-size: 13px; color: var(--text-dim); border-top: 1px solid var(--glass-border);}
+        @media(max-width:768px){ .nav-links {display: none;} .section {padding: 60px 5%;} }
     </style>
 </head>
 <body>
@@ -73,6 +68,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -89,45 +85,81 @@
 <section id="about" class="section">
     <div class="glass-card" style="text-align: center;">
         <h2 class="title">About Me</h2>
-        <p style="color: var(--text-dim); max-width: 850px; margin: 0 auto; font-size: 16px; text-align: justify;">
-            I am a motivated student and an aspiring <strong>Data Analyst</strong>. I thrive on uncovering hidden stories within complex datasets and translating them into actionable business insights. My expertise lies in <strong>Python</strong>, <strong>SQL</strong>, and <strong>Power BI</strong>. I am constantly refining my analytical skills and have solved <strong>50+ LeetCode problems</strong> to strengthen my algorithmic thinking and problem-solving efficiency.
+        <p style="color: var(--text-dim); max-width: 850px; margin: 0 auto;">
+            I am a motivated student and an aspiring <strong>Data Analyst</strong>. I specialize in processing complex datasets to uncover actionable insights. With a focus on <strong>Python, SQL, and Power BI</strong>, I aim to bridge the gap between raw data and strategic business decisions.
         </p>
     </div>
 </section>
 
-<section id="projects" class="section">
-    <h2 class="title">Featured Work</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div>
-                <h3>✈️ Airlines Data Analysis</h3>
-                <p>An in-depth analysis of airline datasets to identify delay patterns, route efficiency, and seasonal trends using Python and SQL. This project demonstrates end-to-end data cleaning and visualization.</p>
+<section id="skills" class="section">
+    <h2 class="title">Technical Expertise</h2>
+    <div class="grid-wrapper">
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--accent);">Core Skills</h3>
+            <div class="skill-info"><span>Python (Pandas/NumPy)</span><span>90%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+            <div class="skill-info"><span>SQL Database</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+            <div class="skill-info"><span>Power BI Dashboards</span><span>80%</span></div><div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--accent);">Coding Stats</h3>
+            <p style="color: #ffa116; font-weight: 600; margin-bottom: 10px;">LeetCode: 50+ Solved</p>
+            <div class="bar-bg"><div class="bar-fill" style="width: 50%; background: #ffa116;"></div></div>
+            <p style="font-size: 14px; color: var(--text-dim);">Strong focus on solving algorithmic challenges and optimizing data structures.</p>
+        </div>
+    </div>
+</section>
+
+<section id="achievements" class="section">
+    <h2 class="title">Achievements</h2>
+    <div class="grid-wrapper">
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--accent);">Milestones</h3>
+            <div class="list-item"><span>🏆</span><span><strong>Problem Solver:</strong> Solved over 50+ problems on LeetCode.</span></div>
+            <div class="list-item"><span>📊</span><span><strong>Data Specialist:</strong> Handled and cleaned 1M+ rows of airline data.</span></div>
+            <div class="list-item"><span>🚀</span><span><strong>Fast Learner:</strong> Built a complete data analysis portfolio within 6 months.</span></div>
+        </div>
+        <div class="glass-card">
+            <h3 style="margin-bottom: 20px; color: var(--accent);">Education</h3>
+            <div style="border-left: 2px solid var(--accent); padding-left: 15px; margin-bottom: 20px;">
+                <p style="font-weight: 600;">Bachelor of Technology</p>
+                <p style="font-size: 13px; color: var(--text-dim);">Focusing on Data Science & Analytics</p>
             </div>
-            <a href="https://github.com/Pavani200618/Airlines-Analysis" target="_blank" class="view-btn">View on GitHub →</a>
+            <div style="border-left: 2px solid var(--accent); padding-left: 15px;">
+                <p style="font-weight: 600;">Secondary Education</p>
+                <p style="font-size: 13px; color: var(--text-dim);">Strong foundation in Mathematics and Statistics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2 class="title">Featured Projects</h2>
+    <div class="grid-wrapper">
+        <div class="glass-card">
+            <h3>✈️ Airline Data Analysis</h3>
+            <p style="color: var(--text-dim); font-size: 14px; margin-top: 10px;">Identified delay patterns and route popularity using Python and SQL. Visualized results in a dynamic dashboard.</p>
+            <a href="https://github.com/Pavani200618/Airlines-Analysis" target="_blank" class="secondary-btn">View on GitHub →</a>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
-    <div class="contact-box glass-card">
-        <h2 class="title">Connect With Me</h2>
-        <p style="color: var(--text-dim);">I am open to collaborations and internship opportunities.</p>
+    <div class="glass-card" style="text-align: center;">
+        <h2 class="title">Get In Touch</h2>
+        <p style="color: var(--text-dim);">Open for Data Analyst internships and collaborations.</p>
         <div class="btn-group">
-            <a href="https://www.linkedin.com/in/surya-pavani-undi-0a6a88330/" target="_blank" class="contact-btn">LinkedIn Profile</a>
-            <a href="mailto:undisuryapavani@gmail.com" class="contact-btn secondary">Email Me</a>
+            <a href="https://www.linkedin.com/in/surya-pavani-undi-0a6a88330/" target="_blank" class="primary-btn">LinkedIn</a>
+            <a href="mailto:undisuryapavani@gmail.com" class="primary-btn" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Email Me</a>
         </div>
     </div>
 </section>
 
-<footer>
-    <p>© 2026 Undi Surya Pavani | Aspiring Data Analyst</p>
-</footer>
+<footer><p>© 2026 Undi Surya Pavani | All Rights Reserved</p></footer>
 
 <script>
     const textElement = document.getElementById("typing-text");
-    const phrases = ["Aspiring Data Analyst", "Python Developer", "SQL Enthusiast", "Problem Solver"];
+    const phrases = ["Aspiring Data Analyst", "Python Developer", "SQL Enthusiast"];
     let pIdx = 0, cIdx = 0, isDel = false;
-
     function type() {
         const current = phrases[pIdx];
         textElement.textContent = isDel ? current.substring(0, cIdx - 1) : current.substring(0, cIdx + 1);
